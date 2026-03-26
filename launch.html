@@ -1,195 +1,389 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>🌐PURPPWORLD🌐</title>
+
     <link rel="icon" type="image/x-icon" href="/purppworld.png">
+
     <style>
+
         /* ---
+
         WEBSITE DESENHADO E DESENVOLVIDO POR
+
         DANIEL PATO / BYGRAIN 2026
+
         --- */
+
         body, html {
+
             margin: 0;
+
             padding: 0;
+
             height: 100%;
+
             background-color: #000000;
+
             color: #ffffff;
+
             font-family: Arial, sans-serif;
+
             overflow-x: hidden;
+
         }
 
-        /* --- FLOATING NAV LINKS --- */
-        .nav-link {
-            position: fixed;
-            top: 20px;
-            z-index: 10000; /* Higher than splash */
-            color: #FF0000;
-            text-decoration: none;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: 16px;
-            letter-spacing: 1px;
-            transition: color 0.2s ease;
-            text-transform: uppercase;
-        }
 
-        .nav-link:hover {
-            color: #ffffff;
-        }
-
-        .nav-left { left: 20px; }
-        .nav-right { right: 20px; }
 
         /* --- SPLASH SCREEN --- */
+
         #splash {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
+
             background: #000000;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             z-index: 9999;
+
+            /* Sped up transition slightly */
+
             transition: opacity 0.6s ease-in-out, visibility 0.6s;
+
         }
+
+
 
         #splash img {
+
             width: clamp(250px, 50vw, 500px);
+
             height: auto;
+
         }
+
+
 
         /* --- MAIN CONTENT --- */
+
         #main-content {
+
             opacity: 0;
+
             transition: opacity 1s ease-in-out;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             width: 100%;
+
             padding-top: 20px;
+
         }
+
+
+
+        /* Fixed the centering for the row containing the shirt and video */
 
         .content-row {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             flex-wrap: wrap;
+
             gap: 40px;
+
             width: 100%;
+
             max-width: 1200px;
+
             margin: 0 auto;
+
         }
+
+
 
         .stretched-text {
+
             font-weight: 900;
+
             display: inline-block;
+
             transform: scaleY(2.5);
+
             line-height: 1;
+
             letter-spacing: 0.1em;
+
             text-transform: uppercase;
+
             white-space: nowrap;
+
         }
+
+
 
         .top-logo {
+
             width: clamp(150px, 30vw, 250px);
+
             height: auto;
+
             margin-bottom: 10px; 
+
         }
+
+
 
         .novo-hit-img {
+
             width: clamp(280px, 60vw, 600px);
+
             height: auto;
+
             margin-bottom: 30px; 
+
             display: block;
+
         }
+
+
 
         .promo-image {
+
             width: clamp(200px, 35vw, 450px); 
+
             height: auto;
+
             display: block;
+
         }
+
+
 
         .video-container {
+
             width: clamp(300px, 45vw, 560px);
+
             aspect-ratio: 16 / 9;
+
         }
+
+
 
         .video-container iframe {
+
             width: 100%;
+
             height: 100%;
+
             border: none;
+
         }
+
+
 
         .footer-text {
+
             font-size: clamp(8px, 1.5vw, 12px); 
+
             margin-bottom: 60px;
-            margin-top: 60px;
+
+            margin-top: 60px; /* Increased to give the row more breathing room */
+
         }
+
+
 
         @media (max-width: 768px) {
+
             .content-row {
+
                 flex-direction: column;
+
                 gap: 20px;
+
             }
+
             .video-container {
+
                 width: 90vw;
+
             }
+
             .promo-image {
+
                 width: 70vw;
+
             }
+
             .novo-hit-img {
+
                 width: 85vw;
+
             }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
-    <a href="https://purppworld.bigcartel.com" target="_blank" class="nav-link nav-left">MERCH</a>
-    <a href="https://sippinpurppxyurinr5.lnk.to/DPTDB" target="_blank" class="nav-link nav-right">STREAM</a>
+    <a href="https://purppworld.bigcartel.com" 
+
+       target="_blank" 
+
+       style="
+
+        position: fixed;
+
+        top: 20px;
+
+        left: 20px;
+
+        z-index: 9999;
+
+        color: #FF0000;
+
+        text-decoration: none;
+
+        font-family: sans-serif;
+
+        font-weight: bold;
+
+        font-size: 16px;
+
+        letter-spacing: 1px;
+
+        transition: color 0.2s ease;
+
+        background: none;
+
+        border: none;
+
+        padding: 0;
+
+       "
+
+       onmouseover="this.style.color='#ffffff';"
+
+       onmouseout="this.style.color='#FF0000';"
+
+    >
+
+      MERCH
+
+    </a>
+
+
 
     <div id="splash">
+
         <img src="/purppworld.png" alt="Logo Splash">
+
     </div>
+
+
 
     <div id="main-content">
+
         <img src="/purppworld.png" alt="Purpp World" class="top-logo">
+
         <img src="/novohit.png" alt="Novo Hit" class="novo-hit-img">
+
         
+
         <div class="content-row">            
+
             <div class="video-container">
+
                 <iframe 
+
                     src="https://www.youtube.com/embed/4v_Jt6hxM1w" 
+
                     title="YouTube video player" 
+
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+
                     allowfullscreen>
+
                 </iframe>
+
             </div>
-            
-            <a href="https://purppworld.bigcartel.com" target="_blank">
+
+                        <a href="https://purppworld.bigcartel.com" target="_blank">
+
                 <img src="/tshirtloja.png" alt="DANÇA T-Shirt" class="promo-image">
+
             </a>
+
         </div>
 
+
+
         <div class="stretched-text footer-text">ANDA LÁ</div>
+
     </div>
 
+
+
     <script>
+
         window.addEventListener('load', function() {
+
+            // Reduced delay to 800ms for a faster transition
+
             setTimeout(function() {
+
                 const splash = document.getElementById('splash');
+
                 const content = document.getElementById('main-content');
+
                 
+
                 splash.style.opacity = '0';
+
                 splash.style.visibility = 'hidden';
+
                 content.style.opacity = '1';
+
             }, 800);
+
         });
+
     </script>
 
+
+
 </body>
+
 </html>
