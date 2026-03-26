@@ -67,15 +67,12 @@
             margin-bottom: 40px;
         }
 
-        .header-text {
-            font-size: clamp(18px, 4vw, 18px);
-            margin-bottom: clamp(40px, 6vw, 60px); /* Increased margin since date is gone */
-        }
-
-        /* Out Now Style (Matching old countdown) */
-        .out-now-text {
-            font-size: clamp(32px, 8vw, 50px);
-            margin-bottom: clamp(50px, 8vw, 50px);
+        /* Novo Hit Image Styling */
+        .novo-hit-img {
+            width: clamp(280px, 60vw, 600px);
+            height: auto;
+            margin-bottom: 40px;
+            display: block;
         }
 
         /* Container for Shirt + Video */
@@ -109,6 +106,7 @@
         .footer-text {
             font-size: clamp(8px, 1.5vw, 12px); 
             margin-bottom: 60px;
+            margin-top: 20px;
         }
 
         /* Responsive: Stack on mobile */
@@ -121,6 +119,9 @@
             }
             .promo-image {
                 width: 70vw;
+            }
+            .novo-hit-img {
+                width: 85vw;
             }
         }
     </style>
@@ -157,14 +158,12 @@
     <div id="main-content">
         <img src="/purppworld.png" alt="Purpp World" class="top-logo">
 
-        <div class="stretched-text header-text">OUT NOW</div>
-        
-        <div class="stretched-text out-now-text">DANÇA PA TE DAR BOLO</div>
+        <img src="/novohit.png" alt="Novo Hit" class="novo-hit-img">
         
         <div class="content-row">
-<a href="https://purppworld.bigcartel.com" target="_blank">
-    <img src="/tshirtloja.png" alt="DANÇA T-Shirt" class="promo-image">
-</a>            
+            <a href="https://purppworld.bigcartel.com" target="_blank">
+                <img src="/tshirtloja.png" alt="DANÇA T-Shirt" class="promo-image">
+            </a>            
             <div class="video-container">
                 <iframe 
                     src="https://www.youtube.com/embed/4v_Jt6hxM1w" 
