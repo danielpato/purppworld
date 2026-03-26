@@ -155,23 +155,30 @@
             }, 1300); // 2.5 seconds total show time
         });
 
-        // COUNTDOWN LOGIC
-        const countDownDate = new Date("March 27, 2026 00:11:11").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+       // COUNTDOWN LOGIC
+// Target: March 27, 2026, 11:11 AM Portugal Time (WEST is UTC+1)
+const targetDate = "2026-03-27T11:11:11+01:00"; 
+const countDownDate = new Date(targetDate).getTime();
 
-            document.getElementById("countdown").innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
-            
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "OUT NOW";
-            }
-        }, 1000);
+const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+    // Display the result in the element with id="countdown"
+    document.getElementById("countdown").innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "OUT NOW";
+    }
+}, 1000);
     </script>
 
 </body>
