@@ -20,6 +20,28 @@
             overflow-x: hidden;
         }
 
+        /* --- FLOATING NAV LINKS --- */
+        .nav-link {
+            position: fixed;
+            top: 20px;
+            z-index: 10000; /* Higher than splash */
+            color: #FF0000;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-left { left: 20px; }
+        .nav-right { right: 20px; }
+
         /* --- SPLASH SCREEN --- */
         #splash {
             position: fixed;
@@ -32,7 +54,6 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            /* Sped up transition slightly */
             transition: opacity 0.6s ease-in-out, visibility 0.6s;
         }
 
@@ -52,7 +73,6 @@
             padding-top: 20px;
         }
 
-        /* Fixed the centering for the row containing the shirt and video */
         .content-row {
             display: flex;
             justify-content: center;
@@ -107,7 +127,7 @@
         .footer-text {
             font-size: clamp(8px, 1.5vw, 12px); 
             margin-bottom: 60px;
-            margin-top: 60px; /* Increased to give the row more breathing room */
+            margin-top: 60px;
         }
 
         @media (max-width: 768px) {
@@ -128,29 +148,9 @@
     </style>
 </head>
 <body>
-    <a href="https://purppworld.bigcartel.com" 
-       target="_blank" 
-       style="
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 9999;
-        color: #FF0000;
-        text-decoration: none;
-        font-family: sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        letter-spacing: 1px;
-        transition: color 0.2s ease;
-        background: none;
-        border: none;
-        padding: 0;
-       "
-       onmouseover="this.style.color='#ffffff';"
-       onmouseout="this.style.color='#FF0000';"
-    >
-      MERCH
-    </a>
+
+    <a href="https://purppworld.bigcartel.com" target="_blank" class="nav-link nav-left">MERCH</a>
+    <a href="https://sippinpurppxyurinr5.lnk.to/DPTDB" target="_blank" class="nav-link nav-right">STREAM</a>
 
     <div id="splash">
         <img src="/purppworld.png" alt="Logo Splash">
@@ -169,7 +169,8 @@
                     allowfullscreen>
                 </iframe>
             </div>
-                        <a href="https://purppworld.bigcartel.com" target="_blank">
+            
+            <a href="https://purppworld.bigcartel.com" target="_blank">
                 <img src="/tshirtloja.png" alt="DANÇA T-Shirt" class="promo-image">
             </a>
         </div>
@@ -179,7 +180,6 @@
 
     <script>
         window.addEventListener('load', function() {
-            // Reduced delay to 800ms for a faster transition
             setTimeout(function() {
                 const splash = document.getElementById('splash');
                 const content = document.getElementById('main-content');
