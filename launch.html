@@ -32,7 +32,8 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 1s ease-in-out, visibility 1s;
+            /* Sped up transition slightly */
+            transition: opacity 0.6s ease-in-out, visibility 0.6s;
         }
 
         #splash img {
@@ -43,12 +44,24 @@
         /* --- MAIN CONTENT --- */
         #main-content {
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            transition: opacity 1s ease-in-out;
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
             padding-top: 20px;
+        }
+
+        /* Fixed the centering for the row containing the shirt and video */
+        .content-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .stretched-text {
@@ -64,26 +77,20 @@
         .top-logo {
             width: clamp(150px, 30vw, 250px);
             height: auto;
-            margin-bottom: 40px;
+            margin-bottom: 10px; 
         }
 
-.top-logo {
-            width: clamp(150px, 30vw, 250px);
-            height: auto;
-            margin-bottom: 10px; /* Reduced from 40px to bring next item closer */
-        }
-
-        /* Novo Hit Image Styling */
         .novo-hit-img {
             width: clamp(280px, 60vw, 600px);
             height: auto;
-            margin-bottom: 30px; /* Space between this and the video/shirt row */
+            margin-bottom: 30px; 
             display: block;
         }
 
         .promo-image {
             width: clamp(200px, 35vw, 450px); 
             height: auto;
+            display: block;
         }
 
         .video-container {
@@ -100,13 +107,13 @@
         .footer-text {
             font-size: clamp(8px, 1.5vw, 12px); 
             margin-bottom: 60px;
-            margin-top: 20px;
+            margin-top: 60px; /* Increased to give the row more breathing room */
         }
 
-        /* Responsive: Stack on mobile */
         @media (max-width: 768px) {
             .content-row {
                 flex-direction: column;
+                gap: 20px;
             }
             .video-container {
                 width: 90vw;
@@ -121,29 +128,29 @@
     </style>
 </head>
 <body>
-<a href="https://purppworld.bigcartel.com" 
-   target="_blank" 
-   style="
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 9999;
-    color: #FF0000;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 1px;
-    transition: color 0.2s ease;
-    background: none;
-    border: none;
-    padding: 0;
-   "
-   onmouseover="this.style.color='#ffffff';"
-   onmouseout="this.style.color='#FF0000';"
->
-  MERCH
-</a>
+    <a href="https://purppworld.bigcartel.com" 
+       target="_blank" 
+       style="
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+        color: #FF0000;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 1px;
+        transition: color 0.2s ease;
+        background: none;
+        border: none;
+        padding: 0;
+       "
+       onmouseover="this.style.color='#ffffff';"
+       onmouseout="this.style.color='#FF0000';"
+    >
+      MERCH
+    </a>
 
     <div id="splash">
         <img src="/purppworld.png" alt="Logo Splash">
@@ -151,7 +158,6 @@
 
     <div id="main-content">
         <img src="/purppworld.png" alt="Purpp World" class="top-logo">
-
         <img src="/novohit.png" alt="Novo Hit" class="novo-hit-img">
         
         <div class="content-row">
@@ -173,6 +179,7 @@
 
     <script>
         window.addEventListener('load', function() {
+            // Reduced delay to 800ms for a faster transition
             setTimeout(function() {
                 const splash = document.getElementById('splash');
                 const content = document.getElementById('main-content');
@@ -180,7 +187,7 @@
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 content.style.opacity = '1';
-            }, 1300);
+            }, 800);
         });
     </script>
 
